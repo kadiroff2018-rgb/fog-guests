@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Алексей Кадыров — гость Fog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#1a1025; --bg2:#271538; --panel:#32194a;
+    --pink:#ff5fb0; --cyan:#2eeaff; --gold:#ffd23f; --mint:#2effc8; --lav:#c78bff;
+    --text:#fff0f8; color-scheme: dark;
+  }
+  *{box-sizing:border-box;}
+  html,body{
+    margin:0;padding:0;height:100%;background:var(--bg);color:var(--text);
+    font-family:'Press Start 2P', monospace; overflow-x:hidden;
+    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10;}
+  .wrap{max-width:760px;margin:0 auto;padding:24px 16px 60px;}
+  header{
+    text-align:center; padding:36px 10px; margin-bottom:28px;
+    background: repeating-linear-gradient(45deg, var(--panel) 0 10px, var(--bg2) 10px 20px);
+    border:4px solid var(--gold); box-shadow:8px 8px 0 var(--pink);
+  }
+  .logo{
+    font-size: clamp(18px, 6vw, 36px); line-height:1.5; letter-spacing:1px;
+    text-shadow: 3px 0 var(--pink), -3px 0 var(--cyan), 0 3px var(--gold), 0 -3px var(--lav);
+  }
+  .subtitle{margin-top:14px; font-size:clamp(9px,3vw,12px); color:var(--gold);}
+  section{margin:26px 0; padding:18px; background:var(--panel); border:4px solid var(--text); box-shadow:6px 6px 0 var(--lav);}
+  h2{font-size:clamp(12px,4vw,16px); color:var(--mint); margin-top:0; text-shadow:2px 2px var(--bg);}
+  .stat-row{display:flex; justify-content:space-between; font-size:10px; margin:10px 0; flex-wrap:wrap; gap:6px;}
+  .bar-bg{background:var(--bg); border:2px solid var(--text); height:16px; width:100%; margin-top:4px;}
+  .bar-fill{height:100%;}
+  .meme-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:14px; margin-top:14px;}
+  .meme-card{background:var(--bg2); border:3px solid var(--pink); padding:12px; font-size:10px; line-height:1.6; text-align:center;}
+  .meme-card .big{font-size:26px; display:block; margin-bottom:6px;}
+  .badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;}
+  .badge{padding:7px 10px; font-size:9px; border:3px solid var(--gold); background:var(--bg); color:var(--gold);}
+  .heart-box{text-align:center;}
+  #heart-btn{
+    font-family:'Press Start 2P',monospace; font-size:30px; cursor:pointer; user-select:none;
+    background:none; border:4px solid var(--text); box-shadow:5px 5px 0 var(--pink);
+    padding:12px 20px; color:var(--text);
+  }
+  #heart-btn:active{transform:translate(3px,3px); box-shadow:2px 2px 0 var(--pink);}
+  #love-count{font-size:18px; color:var(--pink); margin-top:14px; text-shadow:2px 2px 0 var(--lav);}
+  .fog-message{text-align:center; font-size:10px; line-height:2; color:var(--gold); border:3px dashed var(--pink); padding:16px;}
+  footer{text-align:center; font-size:9px; color:var(--mint); margin-top:36px; padding:16px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">Алексей Кадыров</div>
+    <div class="subtitle">★ ГОСТЬ КАЛЬЯННОЙ FOG ★</div>
+  </header>
+
+  <section>
+    <h2>⭐ ДОСЬЕ ГОСТЯ</h2>
+    <div class="stat-row"><span>НАСТРОЕНИЕ</span><div class="bar-bg" style="flex:1;margin-left:10px;"><div class="bar-fill" style="width:88%;background:var(--pink);"></div></div></div>
+    <div class="stat-row"><span>ВКУС В МИКСАХ</span><div class="bar-bg" style="flex:1;margin-left:10px;"><div class="bar-fill" style="width:90%;background:var(--gold);"></div></div></div>
+    <div class="stat-row"><span>ВАЙБ ВЕЧЕРА</span><div class="bar-bg" style="flex:1;margin-left:10px;"><div class="bar-fill" style="width:76%;background:var(--mint);"></div></div></div>
+    <div class="stat-row"><span>ХАРИЗМА</span><div class="bar-bg" style="flex:1;margin-left:10px;"><div class="bar-fill" style="width:96%;background:var(--lav);"></div></div></div>
+    <div class="badges">
+      <span class="badge">⭐ ГОСТЬ FOG</span>
+      <span class="badge">💨 ЦЕНИТЕЛЬ ДЫМА</span>
+      <span class="badge">🔥 ХОРОШИЙ ВАЙБ</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>🎲 ФАКТЫ ДНЯ</h2>
+    <div class="meme-grid">
+      <div class="meme-card"><span class="big">😎</span>Этот гость знает толк в хорошем дыме</div>
+      <div class="meme-card"><span class="big">🚀</span>Заходит в Fog — у бариста сразу поднимается настроение</div>
+      <div class="meme-card"><span class="big">📸</span>Фото с этим гостем украсит любую ленту Fog</div>
+      <div class="meme-card"><span class="big">🎲</span>Удача сегодня явно на стороне этого гостя</div>
+      <div class="meme-card"><span class="big">🕶️</span>Входит в зал — кальянщики сами подтягиваются</div>
+    </div>
+  </section>
+
+  <section class="heart-box">
+    <h2>💕 СЧЁТЧИК ЛЮБВИ FOG</h2>
+    <button id="heart-btn" onclick="loveUp()">💖</button>
+    <div id="love-count">0 сердечек подарено</div>
+  </section>
+
+  <section>
+    <div class="fog-message">
+      💐 С ЛЮБОВЬЮ ОТ КОМАНДЫ FOG 💐<br><br>
+      Спасибо, что ты с нами!<br>
+      Увидимся за новым кальяном 🌷
+    </div>
+  </section>
+
+  <footer>© КОМАНДА FOG · СДЕЛАНО НА ПИКСЕЛЯХ И ЛЮБВИ</footer>
+</div>
+
+<script>
+  let love = 0;
+  function loveUp(){
+    love++;
+    document.getElementById('love-count').textContent = love + ' сердечек подарено';
+  }
+</script>
+</body>
+</html>
